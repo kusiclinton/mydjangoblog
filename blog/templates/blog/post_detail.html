@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt=" Post Image" style="max-width: 300px; height: auto;">
+    {% endif %}
+    <p>Likes: {{ post.likes }}</p>
+    <a href="{% url 'like_post' pk=post.pk %}">Like</a>
+
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in post.comments.all %}
+            <li>
+                <strong>{{ comment.author}} </strong>: {{ comment.content }}
+            </li>
+            {% empty %}
+            <li>No comments yet.</li>
+            {% endfor %}
+    </ul>
+
+    <h3>Leave a comment:</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>By {{ post.author }} on {{ post.published_date }}</p>
+    {% if post.status %}
+        <p>Status: Published</p>
+    {% else %}
+        <p>Status: Draft</p>
+    {% endif %}
+    <a href="{% url 'edit_post' post.pk %}">Edit</a>
+    <a href="{% url 'delete_post' post.pk %}">Delete</a>
+    <a href="{% url 'home' %}">Back to home</a>
+    
+{% endblock %}

@@ -1,0 +1,158 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #1e3a8a; /* Deep Blue */
+    color: #fff;
+    padding: 1.5em 1em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Main layout */
+main {
+    max-width: 800px;
+    margin: 2em auto;
+    padding: 1em;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Post styles */
+.post {
+    background: #ffffff;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    font-size: 1.8em;
+    margin-bottom: 0.5em;
+    color: #1e3a8a;
+}
+
+.post p {
+    line-height: 1.8;
+    margin-top: 0.5em;
+    color: #555;
+}
+
+/* Buttons */
+button,
+a.button {
+    display: inline-block;
+    padding: 0.75em 1.5em;
+    background-color: #1e3a8a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover,
+a.button:hover {
+    background-color: #274bb0;
+    transform: translateY(-3px);
+}
+
+/* Links */
+a {
+    color: #1e3a8a;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1em;
+    background: #1e3a8a;
+    color: white;
+    margin-top: 2em;
+    border-top: 3px solid #d4d4d8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .post h2 {
+        font-size: 1.5em;
+    }
+}
+
+
+/* Navbar styling */
+.navbar {
+    display: flex;              
+    justify-content: flex-end;  
+    padding: 1em;               
+    background-color: #1e3a8a;  
+    position: sticky;         
+    top: 0;                     
+}
+
+/* Nav links styling */
+.nav-links {
+    list-style: none;           
+    margin: 0;                 
+    padding: 0;                 
+    display: flex;             
+    gap: 1em;                  
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;     
+    color: white;               
+    font-weight: bold;          
+    transition: color 0.3s;     
+}
+
+.nav-links a:hover {
+    color: #ffcc00;             
+}
